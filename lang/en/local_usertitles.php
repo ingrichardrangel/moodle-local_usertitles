@@ -25,26 +25,22 @@
 $string['actions'] = 'Actions';
 $string['addtitle'] = 'Add title';
 $string['allowselfselection'] = 'Allow users to select their own title';
-$string['allowselfselection_help'] = 'When enabled, users with the Select own title capability can choose one of the '
-    . 'active titles. Users can never create titles or enter free text.';
+$string['allowselfselection_help'] = 'When enabled, users with the Select own title capability can choose one of the active titles. Users can never create titles or enter free text.';
 $string['assignedusers'] = 'Assigned users';
 $string['assignmentremoved'] = 'The user title has been removed.';
 $string['assignmentsaved'] = 'The user title has been saved.';
 $string['assignusertitle'] = 'Assign user title';
 $string['clearallsync'] = 'Clear synchronized alternate names';
-$string['clearallsyncconfirm'] = 'Clear all alternate name values previously synchronized by this plugin? '
-    . 'Values changed outside this plugin will not be removed.';
+$string['clearallsyncconfirm'] = 'Clear all alternate name values previously synchronized by this plugin? Values changed outside this plugin will not be removed.';
 $string['clearedcount'] = 'Cleared synchronized values: {$a}';
-$string['confirmdelete'] = 'Delete the title "{$a->name}" ({$a->abbreviation})? '
-    . 'It is currently assigned to {$a->count} user(s). Deleting it will remove those assignments.';
+$string['confirmdelete'] = 'Delete the title "{$a->name}" ({$a->abbreviation})? It is currently assigned to {$a->count} user(s). Deleting it will remove those assignments.';
 $string['deletetitle'] = 'Delete title';
 $string['disabled'] = 'Disabled';
 $string['disabledcurrent'] = '{$a} (disabled)';
 $string['edittitle'] = 'Edit title';
 $string['enabled'] = 'Enabled';
 $string['enablevisualtitles'] = 'Display titles throughout Moodle pages';
-$string['enablevisualtitles_help'] = 'When enabled, assigned titles are added visually to user profile links throughout '
-    . 'Moodle pages. Stored names and exported data are not changed.';
+$string['enablevisualtitles_help'] = 'When enabled, assigned titles are added visually to user profile links throughout Moodle pages. Stored names and exported data are not changed.';
 $string['errorabbreviationexists'] = 'A title with this abbreviation already exists.';
 $string['errorinvalidtitle'] = 'The selected title is not available.';
 $string['errornamerequired'] = 'Enter a title name.';
@@ -59,8 +55,7 @@ $string['name'] = 'Name';
 $string['notitle'] = 'No title';
 $string['notitles'] = 'No titles have been created yet.';
 $string['pluginname'] = 'User titles';
-$string['privacy:metadata:assignment'] = 'Stores the title assigned to a user and the value synchronized to the Moodle '
-    . 'alternate name field.';
+$string['privacy:metadata:assignment'] = 'Stores the title assigned to a user and the value synchronized to the Moodle alternate name field.';
 $string['privacy:metadata:assignment:syncedvalue'] = 'The title value written to the alternate name field by the plugin.';
 $string['privacy:metadata:assignment:titleid'] = 'The identifier of the assigned title.';
 $string['privacy:metadata:assignment:userid'] = 'The identifier of the user who owns the assignment.';

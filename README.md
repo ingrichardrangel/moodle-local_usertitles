@@ -27,6 +27,7 @@ their own policies and culture.
 
 The visual display layer never changes Moodle usernames, first names, surnames,
 alternate names, grade data, report data, or exported files.
+The AJAX lookup used by the visual layer also applies Moodle profile-visibility checks per requested user before returning title data.
 
 ## Requirements
 

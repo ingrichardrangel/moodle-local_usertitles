@@ -13,6 +13,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Adds configured user-title prefixes to visible Moodle profile links.
+ *
+ * @module     local_usertitles/display_titles
+ * @copyright  2026 Richard Rangel
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 import {call as ajaxCall} from 'core/ajax';
 
 const USER_LINK_SELECTOR = [

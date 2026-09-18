@@ -2,6 +2,16 @@
 
 All notable changes to User titles are documented in this file.
 
+## 1.0.1 - 2026-09-18
+
+### Fixed
+
+- Add the package-level GNU GPL v3 `LICENSE` file requested during Moodle Plugins review.
+- Use direct language-string assignments without concatenation in `lang/en/local_usertitles.php`.
+- Add the required Moodle module copyright and license metadata to the AMD source file.
+- Restrict the AJAX title lookup to target users whose Moodle profiles the current caller is authorized to view.
+- Add PHPUnit coverage for unauthorized cross-user lookups and access to the current user's own title.
+
 ## 1.0.0 - 2026-07-31
 
 ### Added
