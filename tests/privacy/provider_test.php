@@ -86,10 +86,10 @@ final class provider_test extends \core_privacy\tests\provider_testcase {
         provider::export_user_data($approvedlist);
         $data = writer::with_context($context)->get_data([]);
 
-        $this->assertSame('Privacy Professor', $data->title);
-        $this->assertSame('Privacy Prof.', $data->abbreviation);
-        $this->assertSame(transform::yesno(true), $data->active);
-        $this->assertNull($data->synchronized_value);
+        $this->assertSame('Privacy Professor', $data['title']);
+        $this->assertSame('Privacy Prof.', $data['abbreviation']);
+        $this->assertSame(transform::yesno(true), $data['active']);
+        $this->assertNull($data['synchronized_value']);
     }
 
     /**
