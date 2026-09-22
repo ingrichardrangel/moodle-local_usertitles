@@ -159,8 +159,9 @@ class provider implements
             return;
         }
 
+        $userid = (int) $context->instanceid;
         if ($DB->record_exists('local_usertitles_assignment', ['userid' => $userid])) {
-            $userlist->add_user((int) $context->instanceid);
+            $userlist->add_user($userid);
         }
     }
 

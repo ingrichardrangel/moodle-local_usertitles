@@ -86,10 +86,10 @@ final class provider_test extends \core_privacy\tests\provider_testcase {
         provider::export_user_data($approvedlist);
         $data = writer::with_context($context)->get_data([]);
 
-        $this->assertSame('Privacy Professor', $data['title']);
-        $this->assertSame('Privacy Prof.', $data['abbreviation']);
-        $this->assertSame(transform::yesno(true), $data['active']);
-        $this->assertNull($data['synchronized_value']);
+        $this->assertSame('Privacy Professor', $data->title);
+        $this->assertSame('Privacy Prof.', $data->abbreviation);
+        $this->assertSame(transform::yesno(true), $data->active);
+        $this->assertNull($data->synchronized_value);
     }
 
     /**
@@ -147,17 +147,33 @@ final class provider_test extends \core_privacy\tests\provider_testcase {
         $this->setAdminUser();
 
         $user = $this->getDataGenerator()->create_user();
-        $this->create_assignment($user);
+        $title = $this->create_assignment($user);
         $context = \context_user::instance((int) $user->id);
 
         $userlist = new userlist($context, 'local_usertitles');
         provider::get_users_in_context($userlist);
         $this->assertSame([(int) $user->id], array_map('intval', $userlist->get_userids()));
 
+        $otheruser = $this->getDataGenerator()->create_user();
+        manager::set_user_title((int) $otheruser->id, (int) $title->id);
+
+        $unapprovedlist = new approved_userlist($context, 'local_usertitles', [$otheruser->id]);
+        provider::delete_data_for_users($unapprovedlist);
+        $this->assertTrue($DB->record_exists('local_usertitles_assignment', ['userid' => $user->id]));
+
         $approvedlist = new approved_userlist($context, 'local_usertitles', $userlist->get_userids());
         provider::delete_data_for_users($approvedlist);
 
         $this->assertFalse($DB->record_exists('local_usertitles_assignment', ['userid' => $user->id]));
+        $this->assertTrue($DB->record_exists('local_usertitles_assignment', ['userid' => $otheruser->id]));
+
+        $emptylist = new userlist($context, 'local_usertitles');
+        provider::get_users_in_context($emptylist);
+        $this->assertSame([], $emptylist->get_userids());
+
+        $systemlist = new userlist(\context_system::instance(), 'local_usertitles');
+        provider::get_users_in_context($systemlist);
+        $this->assertSame([], $systemlist->get_userids());
     }
 
     /**
