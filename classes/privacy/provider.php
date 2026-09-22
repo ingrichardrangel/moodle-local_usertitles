@@ -88,8 +88,10 @@ class provider implements
     public static function export_user_data(approved_contextlist $contextlist): void {
         global $DB;
 
+        $userid = (int) $contextlist->get_user()->id;
+
         foreach ($contextlist->get_contexts() as $context) {
-            if (!$context instanceof context_user || (int) $context->instanceid !== $contextlist->get_user()->id) {
+            if (!$context instanceof context_user || (int) $context->instanceid !== $userid) {
                 continue;
             }
 
@@ -98,7 +100,7 @@ class provider implements
                       FROM {local_usertitles_assignment} a
                       JOIN {local_usertitles_title} t ON t.id = a.titleid
                      WHERE a.userid = :userid";
-            $record = $DB->get_record_sql($sql, ['userid' => $context->instanceid]);
+            $record = $DB->get_record_sql($sql, ['userid' => $userid]);
             if (!$record) {
                 continue;
             }
@@ -157,7 +159,7 @@ class provider implements
             return;
         }
 
-        if ($DB->record_exists('local_usertitles_assignment', ['userid' => $context->instanceid])) {
+        if ($DB->record_exists('local_usertitles_assignment', ['userid' => $userid])) {
             $userlist->add_user((int) $context->instanceid);
         }
     }
