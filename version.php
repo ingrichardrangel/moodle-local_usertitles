@@ -25,8 +25,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_usertitles';
-$plugin->version = 2026091800;
+$plugin->version = 2026092200;
 $plugin->requires = 2024100700;
-$plugin->supported = [405, 502];
+$plugin->supported = [405, 503];
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release = '1.0.1';
+$plugin->release = '1.0.2';

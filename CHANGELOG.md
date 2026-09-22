@@ -2,6 +2,21 @@
 
 All notable changes to User titles are documented in this file.
 
+## 1.0.2 - 2026-09-22
+
+### Added
+
+- Declare compatibility with Moodle 5.3 and test the current 5.3 beta through the Moodle `main` branch.
+- Add dedicated PHPUnit coverage for the Privacy API and audit events.
+- Expand manager tests for ordering, disabled titles, duplicate abbreviations, assignment removal, and synchronization states.
+
+### Changed
+
+- Modernize GitHub Actions to the current Moodle Plugin CI workflow baseline with Ubuntu 24.04, conditional database services, MariaDB 11, PostgreSQL 17, and current GitHub actions.
+- Split static/code-quality checks from the PHPUnit compatibility matrix so quality checks are not repeated for every Moodle/database combination.
+- Run PHPUnit across Moodle 4.5, 5.0, 5.1, 5.2, and the Moodle 5.3 beta on PHP 8.1 through 8.4 with MariaDB and PostgreSQL coverage.
+- Remove the empty Behat execution until plugin-specific Behat scenarios are added.
+
 ## 1.0.1 - 2026-09-18
 
 ### Fixed

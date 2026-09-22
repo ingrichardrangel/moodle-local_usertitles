@@ -31,7 +31,7 @@ The AJAX lookup used by the visual layer also applies Moodle profile-visibility 
 
 ## Requirements
 
-- Moodle 4.5 through Moodle 5.2.
+- Moodle 4.5 through Moodle 5.3.
 - A database and PHP version supported by the installed Moodle release.
 
 ## Installation
@@ -158,6 +158,13 @@ The plugin stores:
 - assignment creation and modification times.
 
 The Moodle Privacy API can export and delete this data.
+
+## Automated testing
+
+The repository includes PHPUnit tests for title management, assignments, synchronization,
+external title lookup, privacy operations, and audit events. GitHub Actions runs these
+tests across Moodle 4.5 through 5.3 using supported PHP versions and both MariaDB and
+PostgreSQL. While Moodle 5.3 is in beta, CI tracks the Moodle `main` branch.
 
 ## License
 
